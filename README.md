@@ -7,5 +7,5 @@ Ioc and AOP are the core in Spring framework. This project uses SpringBoot frame
 
 <br/><br/>
 > My English name is Logan. Anything eles please feel free to contact me.<br/>
-> WeChat : xmg102104 <br>
+> :mega: WeChat : xmg102104 <br>
 > :email: Email : m598806805@gmail.com
