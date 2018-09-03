@@ -1,2 +1,2 @@
-# SIDL
-Spring Ioc AOP - Logan
+# SIDL (Spring Ioc AOP - Logan)
+
