@@ -1,4 +1,4 @@
-# SIDL (Spring Ioc AOP - Logan)
+SIDL (Spring Ioc AOP - Logan)
 =======================
 # Abstract
 Ioc and AOP are the core in Spring framework. This project uses SpringBoot framework to `hotswapping` which is in the `build.gradle` file to config it. It's also using the `Flyweight Pattern` to generate objects. 
