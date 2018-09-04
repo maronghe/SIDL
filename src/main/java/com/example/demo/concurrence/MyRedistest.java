@@ -7,6 +7,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * My Redis test
@@ -24,14 +25,17 @@ public class MyRedistest {
 		// 创建jedis对象
 		Jedis jedis = new Jedis("127.0.0.1", 6379,100000);
 		System.out.println(jedis.ping());
-//		JedisPool jedisPool = new JedisPool(new JedisPoolConfig(), "localhost");
 		jedis.set(watchKeys, "100");// 起始库存100
+		System.out.println(jedis.bgsave()); // save in background
 		jedis.close();
 
-		// 10000人并发抢购
-		for (int i = 0; i < 10000; i++) {
-			executorService.execute(new MyRedisRunnable("user" + getRandomString(6)));
+		// 1500人并发抢购
+		for (int i = 0; i < 1500; i++) {
+			executorService.execute(new MyRedisRunnable("user<" + getRandomString(6) + ">", i));
 		}
+		// shut down thread pool
+		executorService.shutdown();
+//		executorService.awaitTermination(60, TimeUnit.SECONDS);
 	}
 	public static String getRandomString(int length) { //length是随机字符串长度
 		String base = "abcdefghijklmnopqrstuvwxyz0123456789";
