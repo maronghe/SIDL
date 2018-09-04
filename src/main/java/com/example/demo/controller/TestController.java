@@ -55,7 +55,7 @@ public class TestController {
 
 
 	/**
-	 *
+	 *  测试参数方法
 	 *  http://localhost:8989/logan/api/testMethod?id=1&name=3
 	 * @param testVo
 	 * @return
